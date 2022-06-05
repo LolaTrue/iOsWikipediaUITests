@@ -1,18 +1,19 @@
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+# Mac OS X ignores
+.DS_Store
 
-## User settings
-xcuserdata/
+# Vim
+*.sw[op]
 
-## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
-*.xcscmblueprint
-*.xccheckout
+# Xcode/ObjC ignores, copied from https://github.com/github/gitignore/blob/master/Objective-C.gitignore
+/build/
+*.bcsymbolmap
+*.version
+Carthage/Checkouts
+Carthage/Build/watchOS/
+Carthage/Build/Mac/
+Carthage/Build/tvOS/
 
-## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
-build/
-DerivedData/
-*.moved-aside
+Carthage Cache
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -21,70 +22,59 @@ DerivedData/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-
-## Obj-C/Swift specific
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
 *.hmap
-
-## App packaging
 *.ipa
+*.xcuserstate
 *.dSYM.zip
-*.dSYM
+*.gcno
+*.gcda
+*.gcov
+*.profdata
+*.xccoverage
 
-## Playgrounds
-timeline.xctimeline
-playground.xcworkspace
+# Bundler
+vendor/bundle
+.bundle
 
-# Swift Package Manager
-#
-# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
-# Package.resolved
-# *.xcodeproj
-#
-# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
-# hence it is not needed unless you have added a package configuration file to your project
-# .swiftpm
+# Fastlane
+fastlane/report.xml
+fastlane/Error*.png
+fastlane/metadata/trade_representative_contact_information
+fastlane/metadata/review_information
+fastlane/Preview.html
 
-.build/
+*.mobileprovision
+
+# Ignore baselines, which we'll eventually maintain in CI to prevent
+# false negatives due to dev machine discrepancies
+xcbaselines/
+
+# Provisioning Profiles
+*.mobileprovision
+
+# IntelliJ config files
+.idea/
 
 # CocoaPods
 #
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+# We're committing the Pods folder in order to facilitate setup
+# and have repeatable builds (each commit is a snapshot of our dependencies)
 #
 # Pods/
-#
-# Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
 
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
+# www
+node_modules/
 
-Carthage/Build/
+# Git
+*.orig
+*.cer
+.env.default
 
-# Accio dependency management
-Dependencies/
-.accio/
+Cartfile.hash
 
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo.
-# Instead, use fastlane to re-generate the screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
-
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
-
-# Code Injection
-#
-# After new code Injection tools there's a generated folder /iOSInjectionProject
-# https://github.com/johnno1962/injectionforxcode
-
-iOSInjectionProject/
+fastlane/snapshot_derived_data/
+WikipediaUITests/Snapshots/
